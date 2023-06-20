@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "testedb"
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/mysql-C:\Users\pedro\OneDrive\Área de Trabalho\projetoChavePix\chavepix\src\main\java\github\com\pedrokbu28\Docker
+    restart: always
+    networks:
+      - minha-rede
+
+networks: 
+  minha-rede:
+    driver: bridge

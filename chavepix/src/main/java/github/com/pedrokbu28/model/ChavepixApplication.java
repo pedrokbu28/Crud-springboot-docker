@@ -29,19 +29,22 @@ public class ChavepixApplication{
 	/**
 	 * @param id
 	 */
-	public String getTelefone() {
+	public void setId(Long id) {
+	
+	}
+	public String setTelefone() {
 			return telefone;
 	}
 
-	public String getEmail() {
+	public String setEmail() {
 			return email;
 	}
 
-	public Number getCpf() {
+	public Number setCpf() {
 			return cpf;
 	}
 
-	public String getChaveAleatoria() {
+	public String setChaveAleatoria() {
 			return chaveAleatoria;
 	}
 }
