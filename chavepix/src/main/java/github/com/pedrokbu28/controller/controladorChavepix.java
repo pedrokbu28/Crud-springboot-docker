@@ -1,5 +1,4 @@
 package github.com.pedrokbu28.controller;
- 
 
 
 import java.util.List;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import github.com.pedrokbu28.model.ChavepixApplication;
 import github.com.pedrokbu28.repositorio.ChavePixRepositorio;
 
+
 @RestController
 @RequestMapping("/ChavepixApplication")
 public class controladorChavepix {
@@ -26,7 +26,7 @@ public class controladorChavepix {
         
 
     @GetMapping
-    public List<ChavepixApplication> listar() {
+    public List<ChavepixApplication> listar() {   
         return repositorio.findAll();
     }
 
