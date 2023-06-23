@@ -31,21 +31,21 @@ public class controladorChavepix {
     }
 
     @PostMapping
-     public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepix){
-        return repositorio.save(chavepix);
+     public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepixapplication){
+        return repositorio.save(chavepixapplication);
      }
 
     @PutMapping
-     public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepix){
-        if(chavepix.getId() > 0)
-            return repositorio.save(chavepix);
+     public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepixapplication){
+        if(chavepixapplication.getId() > 0)
+            return repositorio.save(chavepixapplication);
         return null;
     }
 
     @DeleteMapping
-     public String deletar (@RequestBody ChavepixApplication chavepix){
-           if(chavepix.getId() > 0)
-            repositorio.delete(chavepix);
+     public String deletar (@RequestBody ChavepixApplication chavepixapplication){
+           if(chavepixapplication.getId() > 0)
+            repositorio.delete(chavepixapplication);
         return "Deletado com sucesso";
     }   
    

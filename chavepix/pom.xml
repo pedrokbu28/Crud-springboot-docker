@@ -45,14 +45,14 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-			<version>5.1.47</version>
+			<version>8.0.30</version>
 		</dependency>
 
 			<!-- banco flyway -->
-		<dependency>  
-			<groupId>org.flywaydb</groupId>  
-			<artifactId>flyway-maven-plugin</artifactId>  
-			<version>6.5.5</version>  
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>9.20.0</version>
 		</dependency>
 
 		<dependency>
@@ -74,17 +74,10 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- <plugin> 
+			<plugin>
 				<groupId>org.flywaydb</groupId> 
-				<artifactId>flyway-maven-plugin</artifactId> 
-				<version>6.5.5</version> 
-				<configuration> 
-					<url>your_db_url</url> 
-					<user>your_db_username</user> 
-					<password>your_db_password</password
-					<locations>classpath:db/migration</locations> 
-				</configuration>
-			</plugin> -->
+    			<artifactId>flyway-maven-plugin</artifactId>  
+			</plugin>
 		</plugins>
 	</build>
 

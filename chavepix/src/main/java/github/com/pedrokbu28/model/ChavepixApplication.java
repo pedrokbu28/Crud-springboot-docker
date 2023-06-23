@@ -5,15 +5,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Entity
+@Entity 
+@Table
 public class ChavepixApplication{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String telefone;
+	private Number telefone;
 	private String email;
 	private Number cpf;
 	private String chaveAleatoria;
@@ -26,29 +28,44 @@ public class ChavepixApplication{
 			return id;
 	}
 
+	public Number getTelefone() {
+		return telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public Number getCpf() {
+		return cpf;
+	}
+
+	public String getChaveAleatoria() {
+		return chaveAleatoria;
+	}
+
 	/**
-	 * @param id
+	 * @param 
 	 */
+
 	public void setId(Long id) {
+		this.id = id;
+	}
 	
-	}
-	public String setTelefone() {
-			return telefone;
-	}
-
-	public String setEmail() {
-			return email;
+	public void setTelefone(Number telefone) {
+		this.telefone = telefone;
 	}
 
-	public Number setCpf() {
-			return cpf;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String setChaveAleatoria() {
-			return chaveAleatoria;
+	public void setCpf(Number cpf) {
+		this.cpf = cpf;
 	}
+
+	public void setChaveAleatoria(String chaveAleatoria) {
+		this.chaveAleatoria = chaveAleatoria;
+	}
+
 }
-
-
-
-	

@@ -6,10 +6,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "mysql"
+      MYSQL_USER: "chavepix"
+      MYSQL_PASSWORD: "12342023"
     ports:
       - "3306:3306"
     volumes:
-      - /data/mysql-C:\Users\pedro\OneDrive\Área de Trabalho\projetoChavePix\chavepix\src\main\java\github\com\pedrokbu28\Docker
+      - db:/var/lib/mysql
     restart: always
     networks:
       - minha-rede
@@ -17,3 +19,6 @@ services:
 networks: 
   minha-rede:
     driver: bridge
+
+volumes:
+db:
