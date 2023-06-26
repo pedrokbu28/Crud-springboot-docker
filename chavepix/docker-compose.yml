@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysqlsrv:
-    image: mysql:5.7
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "mysql"
@@ -21,4 +21,4 @@ networks:
     driver: bridge
 
 volumes:
-db:
+  db:
