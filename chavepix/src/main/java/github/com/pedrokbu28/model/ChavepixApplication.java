@@ -1,6 +1,8 @@
 package github.com.pedrokbu28.model;
  
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -66,6 +68,10 @@ public class ChavepixApplication{
 
 	public void setChaveAleatoria(String chaveAleatoria) {
 		this.chaveAleatoria = chaveAleatoria;
+	}
+
+	public Object thenReturn(List<ChavepixApplication> of) {
+		return null;
 	}
 
 }
