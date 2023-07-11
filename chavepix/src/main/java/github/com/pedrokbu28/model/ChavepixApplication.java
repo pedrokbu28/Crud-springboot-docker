@@ -1,23 +1,22 @@
 package github.com.pedrokbu28.model;
  
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity 
-@Table
-public class ChavepixApplication{
+@Table(name = "tb_chavepix")
+public class ChavepixApplication {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Number telefone;
+	private String telefone;
 	private String email;
 	private Number cpf;
 	private String chaveAleatoria;
@@ -30,7 +29,7 @@ public class ChavepixApplication{
 			return id;
 	}
 
-	public Number getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
@@ -54,7 +53,7 @@ public class ChavepixApplication{
 		this.id = id;
 	}
 	
-	public void setTelefone(Number telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -68,10 +67,6 @@ public class ChavepixApplication{
 
 	public void setChaveAleatoria(String chaveAleatoria) {
 		this.chaveAleatoria = chaveAleatoria;
-	}
-
-	public Object thenReturn(List<ChavepixApplication> of) {
-		return null;
 	}
 
 }

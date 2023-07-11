@@ -1,6 +1,5 @@
 package github.com.pedrokbu28.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,39 +12,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import github.com.pedrokbu28.model.ChavepixApplication;
-import github.com.pedrokbu28.repositorio.ChavePixRepositorio;
-
+import github.com.pedrokbu28.service.ChavepixService;
 
 @RestController
-@RequestMapping("/ChavepixApplication")
-public class controladorChavepix {
+@RequestMapping("/Chavepix")
+public class ControladorChavepix {
     
     
     @Autowired
-    private ChavePixRepositorio repositorio;
+    private ChavepixService chavepixService; 
         
 
     @GetMapping
-    public List<ChavepixApplication> listar() {   
-        return repositorio.findAll();
+    public List<ChavepixApplication> findAll() {   
+        List<ChavepixApplication> result = chavepixService.findAll();
+        return result;
     }
 
     @PostMapping
      public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepixapplication){
-        return repositorio.save(chavepixapplication);
+        return chavepixService.save(chavepixapplication);
      }
 
     @PutMapping
      public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepixapplication){
         if(chavepixapplication.getId() > 0)
-            return repositorio.save(chavepixapplication);
+            return chavepixService.save(chavepixapplication);
         return null;
     }
 
     @DeleteMapping
      public String deletar (@RequestBody ChavepixApplication chavepixapplication){
            if(chavepixapplication.getId() > 0)
-            repositorio.delete(chavepixapplication);
+            chavepixService.delete(chavepixapplication);
         return "Deletado com sucesso";
     }   
    
