@@ -12,11 +12,11 @@ import github.com.pedrokbu28.repositorio.ChavepixRepositorio;
 public class ChavepixService {
     
     @Autowired
-    private ChavepixRepositorio repositorio;
+    private ChavepixRepositorio chavepixRepositorio;
 
     
     public List<ChavepixApplication> findAll() {
-        List<ChavepixApplication> result = repositorio.findAll();
+        List<ChavepixApplication> result = chavepixRepositorio.findAll();
         return result;
     }
 

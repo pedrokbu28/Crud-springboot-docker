@@ -1,16 +1,14 @@
 package github.com.pedrokbu28.model;
  
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.io.Serializable;
 
 
 @Entity 
 @Table(name = "tb_chavepix")
-public class ChavepixApplication {
+public class ChavepixApplication implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +17,7 @@ public class ChavepixApplication {
 	private String telefone;
 	private String email;
 	private Number cpf;
+	@Column(name = "chave_aleatoria")
 	private String chaveAleatoria;
 
 	/**
