@@ -5,7 +5,7 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "chavepix-mysqlsrv-1"
+      MYSQL_DATABASE: "mysql"
       MYSQL_USER: "chavepix"
       MYSQL_PASSWORD: "12342023"
     ports:

@@ -20,14 +20,12 @@ public class ChavepixService {
         return result;
     }
 
-
     public void delete(ChavepixApplication chavepixapplication) {
+        chavepixRepositorio.delete(chavepixapplication);
     }
-
 
     public ChavepixApplication save(ChavepixApplication chavepixapplication) {
-        return chavepixapplication;
+        return chavepixRepositorio.save(chavepixapplication);
     }
-
 
 }

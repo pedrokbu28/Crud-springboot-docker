@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-restApi<chavepix>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "github.com.pedrokbu28.restApi",
+            "projectName": "chavepix",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

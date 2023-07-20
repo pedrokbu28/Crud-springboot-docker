@@ -24,7 +24,7 @@ public class ControladorChavepix {
         
 
     @GetMapping
-    public List<ChavepixApplication> findAll() {   
+    public List<ChavepixApplication> findAll() {
         List<ChavepixApplication> result = chavepixService.findAll();
         return result;
     }
