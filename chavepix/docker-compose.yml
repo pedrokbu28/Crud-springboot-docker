@@ -4,7 +4,7 @@ services:
   mysqlsrv:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: "1234567"
       MYSQL_DATABASE: "mysql"
       MYSQL_USER: "chavepix"
       MYSQL_PASSWORD: "12342023"

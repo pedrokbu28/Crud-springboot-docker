@@ -24,26 +24,22 @@ public class ControladorChavepix {
         
 
     @GetMapping
-    public List<ChavepixApplication> findAll() {
-        List<ChavepixApplication> result = chavepixService.findAll();
-        return result;
+    public List<ChavepixApplication> selecionar() {
+        return chavepixService.listar();
     }
 
     @PostMapping
      public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepixapplication){
-        return chavepixService.save(chavepixapplication);
+        return chavepixService.salvar(chavepixapplication);
      }
 
     @PutMapping
      public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepixapplication){
-        if(chavepixapplication.getId() > 0)
-            return chavepixService.save(chavepixapplication);
-        return null;
+       return chavepixService.alterar(chavepixapplication);
     }
 
     @DeleteMapping
      public String deletar (@RequestBody ChavepixApplication chavepixapplication){
-           if(chavepixapplication.getId() > 0)
             chavepixService.delete(chavepixapplication);
         return "Deletado com sucesso";
     }   

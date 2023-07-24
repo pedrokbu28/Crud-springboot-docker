@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 
 
-@Entity 
+@Entity
 @Table(name = "tb_chavepix")
 public class ChavepixApplication  implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -18,12 +18,12 @@ public class ChavepixApplication  implements Serializable {
 	private String telefone;
 	private String email;
 	private String cpf;
+
 	@Column(name = "chave_aleatoria")
 	private String chaveAleatoria;
 
 	public ChavepixApplication() {
 	}
-
 
 	/**
 	 * @return Long return the id
@@ -67,6 +67,10 @@ public class ChavepixApplication  implements Serializable {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public void setChaveAleatoria(String chaveAleatoria) {
+		this.chaveAleatoria = chaveAleatoria;
 	}
 
 }
