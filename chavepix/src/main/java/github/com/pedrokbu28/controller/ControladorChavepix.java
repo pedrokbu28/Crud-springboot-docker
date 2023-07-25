@@ -29,17 +29,17 @@ public class ControladorChavepix {
     }
 
     @PostMapping
-     public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepixapplication){
+    public ChavepixApplication adicionar (@RequestBody ChavepixApplication chavepixapplication){
         return chavepixService.salvar(chavepixapplication);
-     }
+    }
 
     @PutMapping
-     public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepixapplication){
-       return chavepixService.alterar(chavepixapplication);
+    public ChavepixApplication alterar (@RequestBody ChavepixApplication chavepixapplication){
+        return chavepixService.alterar(chavepixapplication);
     }
 
     @DeleteMapping
-     public String deletar (@RequestBody ChavepixApplication chavepixapplication){
+    public String deletar (@RequestBody ChavepixApplication chavepixapplication){
             chavepixService.delete(chavepixapplication);
         return "Deletado com sucesso";
     }   

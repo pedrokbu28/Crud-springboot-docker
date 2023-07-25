@@ -11,39 +11,38 @@ import github.com.pedrokbu28.repositorio.ChavepixRepositorio;
 
 @Service
 public class ChavepixService {
-    
+
     @Autowired
     private ChavepixRepositorio chavepixRepositorio;
     
-
-
 
     public List<ChavepixApplication> listar() {
         return chavepixRepositorio.findAll();
     }
 
     public ChavepixApplication salvar(ChavepixApplication chavepixapplication) {
-        //mensagem.setMensagem("Salvo com sucesso");
-        return chavepixRepositorio.save(chavepixapplication);
+        if (chavepixapplication.getId() == null && chavepixapplication.getTelefone() == null && chavepixapplication.getEmail() == null &&
+           chavepixapplication.getCpf() == null && chavepixapplication.getChaveAleatoria() == null) {
+            throw new IllegalArgumentException("Pelo menos um dos campos (telefone, email, cpf ou chaveAleatoria) deve ser preenchido.");
+        }else{
+            return chavepixRepositorio.save(chavepixapplication);  
+        }  
     }
-    
-    public ChavepixApplication alterar(ChavepixApplication chavepixApplication) {
-        if(chavepixApplication.getId() > 0) {
-            //mensagem.setMensagem("Alterado com sucesso");
-        return chavepixRepositorio.save(chavepixApplication);
+
+    public ChavepixApplication alterar(ChavepixApplication chavepixapplication) {
+        if(chavepixapplication.getId() > 0) {
+            return chavepixRepositorio.save(chavepixapplication);
         }else {
             return null;
         }
+        
     }
 
     public void delete(ChavepixApplication chavepixapplication) {
         if(chavepixapplication.getId() > 0)
             chavepixRepositorio.delete(chavepixapplication);
-    }
+    }   
 
 }
-
-
-
 
     
