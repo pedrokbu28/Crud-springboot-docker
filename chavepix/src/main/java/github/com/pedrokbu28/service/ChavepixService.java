@@ -41,6 +41,10 @@ public class ChavepixService {
     public void delete(ChavepixApplication chavepixapplication) {
         if(chavepixapplication.getId() > 0)
             chavepixRepositorio.delete(chavepixapplication);
+    }
+
+    public Object assertNotNull(Long id) {
+        return null;
     }   
 
 }
